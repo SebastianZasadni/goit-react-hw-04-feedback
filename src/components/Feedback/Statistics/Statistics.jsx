@@ -9,11 +9,17 @@ export const Statistics = ({
 }) => {
   return (
     <div>
-      <span> Good: {good}</span>
-      <span> Neutral: {neutral}</span>
-      <span> Bad: {bad}</span>
-      <span> Total: {total}</span>
-      <span> Positive feedback: {feedbackPercentage}%</span>
+      {total ? (
+        <div>
+          <span> Good: {good}</span>
+          <span> Neutral: {neutral}</span>
+          <span> Bad: {bad}</span>
+          <span> Total: {total}</span>
+          <span> Positive feedback: {feedbackPercentage}%</span>
+        </div>
+      ) : (
+        <p>There is no feedback.</p>
+      )}
     </div>
   );
 };
