@@ -1,3 +1,4 @@
-import { Section } from './components/Feedback/Section/Section.jsx';
-
-export const App = () => <Section title="Please leave feedback" />;
+import { Feedback } from "components/Feedback/Feedback";
+export const App = () => (
+  <Feedback/>
+);
