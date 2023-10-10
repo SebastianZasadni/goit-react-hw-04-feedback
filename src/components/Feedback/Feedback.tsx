@@ -17,7 +17,7 @@ export const Feedback = () => {
     }));
   };
 
-  const getFeedbackPercentage = (fn: feedbackPercentageFunction) => {
+  const getFeedbackPercentage = (): feedbackPercentageFunction => {
     if (good) {
       return parseFloat(((good * 100) / (good + bad + neutral)).toFixed(2));
     } else {
