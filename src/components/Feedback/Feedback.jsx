@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Section } from './Section/Section.js';
-import { Statistics } from './Statistics/Statistics.js';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.js';
+import { Section } from './Section/Section.tsx';
+import { Statistics } from './Statistics/Statistics.tsx';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.tsx';
 
-type feedbackPercentageFunction = () => number;
+// type feedbackPercentageFunction = () => number;
 
 export const Feedback = () => {
   const [state, setState] = useState({ good: 0, neutral: 0, bad: 0 });
@@ -17,7 +17,7 @@ export const Feedback = () => {
     }));
   };
 
-  const getFeedbackPercentage = (): feedbackPercentageFunction => {
+  const getFeedbackPercentage = () => {
     if (good) {
       return parseFloat(((good * 100) / (good + bad + neutral)).toFixed(2));
     } else {
