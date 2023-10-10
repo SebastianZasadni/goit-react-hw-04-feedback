@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import { Section } from './Section/Section';
-import { Statistics } from './Statistics/Statistics';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { useState } from 'react';
+import { Section } from './Section/Section.js';
+import { Statistics } from './Statistics/Statistics.js';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.js';
+
+type feedbackPercentageFunction = () => number;
 
 export const Feedback = () => {
   const [state, setState] = useState({ good: 0, neutral: 0, bad: 0 });
 
   const { good, neutral, bad } = state;
 
-  const leaveFeedbackHandler = option => {
+  const leaveFeedbackHandler = (option: string) => {
     setState(prevState => ({
       ...prevState,
       [option]: prevState[option] + 1,
     }));
   };
 
-  const getFeedbackPercentage = () => {
+  const getFeedbackPercentage = (fn: feedbackPercentageFunction) => {
     if (good) {
       return parseFloat(((good * 100) / (good + bad + neutral)).toFixed(2));
     } else {

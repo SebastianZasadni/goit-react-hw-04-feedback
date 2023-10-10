@@ -1,4 +1,3 @@
-import { Feedback } from "components/Feedback/Feedback";
-export const App = () => (
-  <Feedback/>
-);
+import { Feedback } from './components/Feedback/Feedback.jsx';
+
+export const App = () => <Feedback />;
